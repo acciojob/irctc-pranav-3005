@@ -181,7 +181,7 @@ public class TrainService {
             }
         }
 
-        return null;
+        return passingTrains;
     }
 
 }
