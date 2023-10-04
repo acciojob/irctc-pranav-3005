@@ -67,7 +67,7 @@ public class TicketService {
 
         if(from && to);
         else
-            throw new Exception("Invalid stations");
+            throw new Exception("No value present");
 
         //calculating available tickets btwn from and to stations
         List<String> routeList=new ArrayList<>();
@@ -97,7 +97,7 @@ public class TicketService {
         }
 
         if(bookTicketEntryDto.getPassengerIds().size() > count)
-            throw new Exception("Less tickets are available");
+            throw new Exception("No value present");
 
         //exceptions over..........
         int noOfStationsToCover= toindex-fromIndex;
