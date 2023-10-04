@@ -120,7 +120,12 @@ public class TicketService {
         bookingPassenger.getBookedTickets().add(savedTicket);
         Passenger savedPassenger=passengerRepository.save(bookingPassenger);
 
-        savedTicket.getPassengersList().add(savedPassenger);
+        List<Integer>passengerIdList=bookTicketEntryDto.getPassengerIds();
+        for(int id:passengerIdList)
+        {
+            savedTicket.getPassengersList().add(passengerRepository.findById(id).get());
+        }
+                //savedTicket.getPassengersList().add(savedPassenger);
         Ticket savedTicket1=ticketRepository.save(savedTicket);
 
         // train - ticket

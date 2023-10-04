@@ -173,9 +173,7 @@ public class TrainService {
                 {
                     LocalTime updatedTrainTime= train.getDepartureTime().plusHours(i);
 
-                    if(updatedTrainTime.compareTo(startTime)>=0)
-                        passingTrains.add(train.getTrainId());
-                    else if(updatedTrainTime.compareTo(endTime)<=0)
+                    if(updatedTrainTime.compareTo(startTime)>=0 && updatedTrainTime.compareTo(endTime)<=0)
                         passingTrains.add(train.getTrainId());
                 }
             }
