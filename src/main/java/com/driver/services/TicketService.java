@@ -65,7 +65,8 @@ public class TicketService {
             }
         }
 
-        if(!from || !to)
+        if(from && to);
+        else
             throw new Exception("Invalid stations");
 
         //calculating available tickets btwn from and to stations
